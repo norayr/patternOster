@@ -1,0 +1,14 @@
+voc = /opt/voc/bin/voc
+
+
+
+
+all:
+	$(voc) -s stdin.Mod patternTypes.Mod patterns.Mod patternOster.Mod argsIn.Mod replace.Mod -m
+
+
+clean:
+	rm -rf *.sym
+	rm -rf *.o
+	rm -rf *.c
+	rm -rf *.h
