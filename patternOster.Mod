@@ -1,6 +1,6 @@
 MODULE patternOster;
 
-IMPORT Out := Console, stdin, patternTypes, patterns;
+IMPORT Out := Console, stdin, patternTypes, patterns, mapActions;
 
 PROCEDURE feelbuf(VAR str: patternTypes.pattern);
 VAR
@@ -25,7 +25,7 @@ END feelbuf;
 
 PROCEDURE WriteLn(VAR str : patternTypes.pattern; last: LONGINT);
 VAR
-  i : INTEGER;
+  i : LONGINT;
   k : LONGINT;
 BEGIN
   i := 0;
@@ -71,14 +71,15 @@ BEGIN
    (*Out.Flush;*)
 END replace;
 
-PROCEDURE Convert*(VAR map: patternTypes.pattern);
+PROCEDURE Convert*(VAR map: patternTypes.patternMap);
 VAR
-  i : INTEGER;
+  i : LONGINT;
+  maxPatternLength : LONGINT;
+  buf : patternTypes.pattern;
 BEGIN
-  i := 0;
-  REPEAT
-    
-  UNTIL i = LEN(map^);
+  maxPatternLength := mapActions.getPatternMaxLength(map);
+  NEW(buf, maxPatternLength); 
+  feelbuf(buf);
 END Convert;
 
 END patternOster.

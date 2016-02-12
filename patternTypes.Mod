@@ -17,7 +17,7 @@ pattern* = POINTER TO ARRAY OF char;
 
 (** pattern pair for future array which will describe mappings. it's fields could be named {from, to}, or {src, dst}, or {first, second}, does not matter. **)
 patternPair* = RECORD
-  a, b: pattern;
+  a*, b*: pattern;
 END;
 
 (** this will describe mappings - from/to patterns **)

@@ -1,6 +1,6 @@
-Module ArmSCII8ToUTF8;
+MODULE ArmSCII8ToUTF8;
 
-IMPORT In := argsIn, Out := Console;
+IMPORT (*In := argsIn,*) Out := Console, encMapsArmSCII8ToUTF8, patternOster;
 
 PROCEDURE showhelp;
 BEGIN
@@ -17,7 +17,8 @@ END showhelp;
 
 
 BEGIN
-hyaline.
+encMapsArmSCII8ToUTF8.initMap;
+patternOster.Convert(encMapsArmSCII8ToUTF8.mapA8ToU8);
 
 END ArmSCII8ToUTF8.
 
